@@ -156,3 +156,19 @@ btn_proses = tk.Button(
     pady=5,
 )
 btn_proses.grid(row=4, column=0, columnspan=2, pady=15)
+output_frame = tk.LabelFrame(
+    form_frame, text=" Hasil Prediksi ", font=("Helvetica", 10, "bold"), bg="#f4f6f9", padx=10, pady=10
+)
+output_frame.grid(row=5, column=0, columnspan=2, sticky="we", pady=5)
+
+label_hasil_val = tk.Label(
+    output_frame,
+    text="Belum ada data diproses.",
+    font=("Helvetica", 9),
+    bg="#f4f6f9",
+    fg="#555",
+    justify="left",
+)
+label_hasil_val.pack(anchor="w")
+
+root.mainloop()
