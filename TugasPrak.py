@@ -87,3 +87,72 @@ root = tk.Tk()
 root.title("Sistem Rekomendasi Fakultas Siswa")
 root.geometry("450x480")
 root.config(bg="#f4f6f9")
+
+header_frame = tk.Frame(root, bg="#2c3e50", pady=10)
+header_frame.pack(fill=tk.X)
+
+lbl_title = tk.Label(
+    header_frame,
+    text="Sistem Prediksi Fakultas Siswa",
+    font=("Helvetica", 14, "bold"),
+    fg="white",
+    bg="#2c3e50",
+)
+lbl_title.pack()
+
+
+form_frame = tk.Frame(root, bg="#f4f6f9", padx=20, pady=15)
+form_frame.pack(fill=tk.BOTH, expand=True)
+
+
+tk.Label(
+    form_frame,
+    text="Nama Lengkap Siswa:",
+    font=("Helvetica", 10),
+    bg="#f4f6f9",
+    anchor="w",
+).grid(row=0, column=0, sticky="w", pady=8)
+entry_nama = tk.Entry(form_frame, font=("Helvetica", 10), width=25)
+entry_nama.grid(row=0, column=1, pady=8, padx=5)
+
+tk.Label(
+    form_frame,
+    text="Nilai Biologi:",
+    font=("Helvetica", 10),
+    bg="#f4f6f9",
+    anchor="w",
+).grid(row=1, column=0, sticky="w", pady=8)
+entry_biologi = tk.Entry(form_frame, font=("Helvetica", 10), width=25)
+entry_biologi.grid(row=1, column=1, pady=8, padx=5)
+
+tk.Label(
+    form_frame,
+    text="Nilai Fisika:",
+    font=("Helvetica", 10),
+    bg="#f4f6f9",
+    anchor="w",
+).grid(row=2, column=0, sticky="w", pady=8)
+entry_fisika = tk.Entry(form_frame, font=("Helvetica", 10), width=25)
+entry_fisika.grid(row=2, column=1, pady=8, padx=5)
+
+tk.Label(
+    form_frame,
+    text="Nilai Bahasa Inggris:",
+    font=("Helvetica", 10),
+    bg="#f4f6f9",
+    anchor="w",
+).grid(row=3, column=0, sticky="w", pady=8)
+entry_inggris = tk.Entry(form_frame, font=("Helvetica", 10), width=25)
+entry_inggris.grid(row=3, column=1, pady=8, padx=5)
+
+btn_proses = tk.Button(
+    form_frame,
+    text="Proses & Simpan Data",
+    command=proses_prediksi,
+    bg="#27ae60",
+    fg="white",
+    font=("Helvetica", 10, "bold"),
+    width=22,
+    pady=5,
+)
+btn_proses.grid(row=4, column=0, columnspan=2, pady=15)
