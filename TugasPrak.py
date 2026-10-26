@@ -80,3 +80,10 @@ def clear_form():
   entry_biologi.delete(0, tk.END)
   entry_fisika.delete(0, tk.END)
   entry_inggris.delete(0, tk.END)
+
+init_db()
+
+root = tk.Tk()
+root.title("Sistem Rekomendasi Fakultas Siswa")
+root.geometry("450x480")
+root.config(bg="#f4f6f9")
