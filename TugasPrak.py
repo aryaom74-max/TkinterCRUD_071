@@ -48,3 +48,29 @@ if biologi > fisika and biologi > inggris:
     prediksi = "Fakultas Bahasa & Sastra"
   else:
     prediksi = "Fakultas Multidisiplin (Terdapat nilai tertinggi yang sama)"
+
+try:
+    conn = sqlite3.connect("nilai_siswa.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+            INSERT INTO nilai_siswa (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
+            VALUES (?, ?, ?, ?, ?)
+        """,
+        (nama, biologi, fisika, inggris, prediksi),
+    )
+    conn.commit()
+    conn.close()
+
+    label_hasil_val.config(
+        text=f"Nama: {nama}\nHasil Rekomendasi: {prediksi}", fg="darkgreen"
+    )
+    messagebox.showinfo(
+        "Berhasil", f"Data atas nama {nama} berhasil disimpan ke database!"
+    )
+    clear_form()
+
+  except Exception as e:
+    messagebox.showerror(
+        "Database Error", f"Gagal menyimpan ke database: {str(e)}"
+    )
