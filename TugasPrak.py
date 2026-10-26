@@ -74,3 +74,9 @@ try:
     messagebox.showerror(
         "Database Error", f"Gagal menyimpan ke database: {str(e)}"
     )
+
+def clear_form():
+  entry_nama.delete(0, tk.END)
+  entry_biologi.delete(0, tk.END)
+  entry_fisika.delete(0, tk.END)
+  entry_inggris.delete(0, tk.END)
