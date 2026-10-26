@@ -39,3 +39,12 @@ def proses_prediksi():
         "Error", "Nilai Biologi, Fisika, dan Inggris harus berupa angka valid!"
     )
     return
+
+if biologi > fisika and biologi > inggris:
+    prediksi = "Fakultas Kedokteran"
+  elif fisika > biologi and fisika > inggris:
+    prediksi = "Fakultas Teknik"
+  elif inggris > biologi and inggris > fisika:
+    prediksi = "Fakultas Bahasa & Sastra"
+  else:
+    prediksi = "Fakultas Multidisiplin (Terdapat nilai tertinggi yang sama)"
